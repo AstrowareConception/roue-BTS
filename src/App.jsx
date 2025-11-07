@@ -3,6 +3,15 @@ import Wheel from './components/Wheel.jsx'
 
 const STORAGE_KEY = 'tirage-roue-double:students:enabled'
 
+function shuffle(arr) {
+  const a = arr.slice()
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
+
 function usePersistedEnabled(ids) {
   const [enabled, setEnabled] = useState(() => new Set())
   useEffect(() => {
@@ -46,9 +55,15 @@ export default function App() {
   const spinDurationMs = 10000 // 10s suspense
 
   useEffect(() => {
-    // load JSON from public folder
-    fetch('/data/terms.json').then(r => r.json()).then(setTerms).catch(() => setTerms([]))
-    fetch('/data/students.json').then(r => r.json()).then(setStudents).catch(() => setStudents([]))
+    // load JSON from public folder and shuffle for randomness
+    fetch('/data/terms.json')
+      .then(r => r.json())
+      .then(data => setTerms(shuffle(data)))
+      .catch(() => setTerms([]))
+    fetch('/data/students.json')
+      .then(r => r.json())
+      .then(data => setStudents(shuffle(data)))
+      .catch(() => setStudents([]))
   }, [])
 
   const eligibleStudents = useMemo(() => students.filter(s => enabledSet.has(s.id)), [students, enabledSet])
@@ -88,6 +103,9 @@ export default function App() {
     setReveal(false)
     setSelectedStudentIdx(null)
     setSelectedTermIdx(null)
+    // Re-shuffle both lists to accentuate randomness on each reset
+    setTerms(prev => shuffle(prev))
+    setStudents(prev => shuffle(prev))
   }
 
   function toggleStudent(id) {

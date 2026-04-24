@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import Wheel from './components/Wheel.jsx'
 
 const STORAGE_KEY = 'tirage-roue-double:students:enabled'
+const DRAW_TERMS_COUNT = 24
 
 function shuffle(arr) {
   const a = arr.slice()
@@ -10,6 +11,11 @@ function shuffle(arr) {
     ;[a[i], a[j]] = [a[j], a[i]]
   }
   return a
+}
+
+function pickTermPool(allTerms, count = DRAW_TERMS_COUNT) {
+  if (!Array.isArray(allTerms) || allTerms.length === 0) return []
+  return shuffle(allTerms).slice(0, Math.min(count, allTerms.length))
 }
 
 function usePersistedEnabled(ids) {
@@ -41,6 +47,7 @@ function usePersistedEnabled(ids) {
 }
 
 export default function App() {
+  const [allTerms, setAllTerms] = useState([])
   const [terms, setTerms] = useState([])
   const [students, setStudents] = useState([])
   const [enabledSet, setEnabledSet] = usePersistedEnabled(useMemo(() => students.map(s => s.id), [students]))
@@ -58,7 +65,11 @@ export default function App() {
     // load JSON from public folder and shuffle for randomness
     fetch('/data/terms.json')
       .then(r => r.json())
-      .then(data => setTerms(shuffle(data)))
+      .then(data => {
+        const randomized = shuffle(data)
+        setAllTerms(randomized)
+        setTerms(pickTermPool(randomized))
+      })
       .catch(() => setTerms([]))
     fetch('/data/students.json')
       .then(r => r.json())
@@ -103,8 +114,8 @@ export default function App() {
     setReveal(false)
     setSelectedStudentIdx(null)
     setSelectedTermIdx(null)
-    // Re-shuffle both lists to accentuate randomness on each reset
-    setTerms(prev => shuffle(prev))
+    // Regenerate a fresh 24-terms pool on each reset
+    setTerms(pickTermPool(allTerms))
     setStudents(prev => shuffle(prev))
   }
 

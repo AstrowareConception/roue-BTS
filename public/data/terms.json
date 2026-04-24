@@ -1,29 +1,375 @@
 [
- { "term": "POO", "definition": "Programmation Orientée Objet. Paradigme qui organise le code en classes et objets avec encapsulation, héritage et polymorphisme pour modéliser le domaine. Elle favorise la réutilisabilité et la maintenabilité (SOLID), mais nécessite une bonne conception pour éviter l’anti‑pattern ‘God Object’." },
-  { "term": "MVC", "definition": "Modèle–Vue–Contrôleur. Architecture séparant les responsabilités : Modèle (données/logiciel métier), Vue (présentation) et Contrôleur (orchestration/flux). Cette séparation facilite les tests, l’évolutivité et la collaboration UI/Back. Exemples : Spring MVC, Laravel, Rails, frameworks front inspirés (Vue/React avec patterns)." },
-  { "term": "API", "definition": "Interface de Programmation d’Application. Contrat exposant des fonctionnalités ou des données à d’autres logiciels via des endpoints, des schémas et des règles d’authentification. Une bonne API est documentée (OpenAPI/Swagger), versionnée, testée et respecte les codes d’erreur et quotas pour garantir fiabilité et sécurité." },
-  { "term": "CRUD", "definition": "Create, Read, Update, Delete. Quatre opérations fondamentales sur les données, souvent exposées via une API REST et reliées aux verbes HTTP. Elles constituent la base d’une interface d’administration, d’un back‑office ou d’un microservice persistant." },
-  { "term": "SQL", "definition": "Structured Query Language. Langage standard pour interroger et manipuler des bases relationnelles (SELECT, JOIN, GROUP BY, transactions). Les bonnes pratiques incluent l’indexation, la normalisation/dénormalisation raisonnée, les vues matérialisées et la prévention des injections via requêtes paramétrées." },
-  { "term": "UML", "definition": "Unified Modeling Language. Langage de modélisation visuelle pour analyser et concevoir des systèmes : cas d’usage, diagrammes de classes, de séquence, d’activité, de déploiement. Il facilite la communication entre parties prenantes et sert de support à la documentation vivante." },
-  { "term": "IDE", "definition": "Integrated Development Environment, Environnement de Développement Intégré (p. ex. VS Code, IntelliJ). Il regroupe éditeur, refactoring, débogueur, intégration Git, exécution de tests et extensions. Un IDE bien configuré améliore la productivité et la qualité (lint, formatage, snippets, inspections)." },
-  { "term": "GIT", "definition": "Système de contrôle de version distribué. Permet de suivre l’historique, travailler en branches (feature, release, hotfix), faire des revues (PR/MR) et gérer les conflits/merges. Bonnes pratiques : commits atomiques et message clair, rebase/squash quand pertinent, CI à chaque push." },
-  { "term": "JSON", "definition": "JavaScript Object Notation. Format texte léger clé/valeur largement utilisé dans les APIs et configurations. Lisible par humains et machines, il supporte objets, tableaux, booléens, nombres et null. Attention aux pièges : pas de commentaires natifs, gestion des dates/BigInt et encodage UTF‑8." },
-  { "term": "HTTP", "definition": "HyperText Transfer Protocol. Protocole du Web pour transporter requêtes/réponses avec méthodes (GET, POST…), statuts (2xx, 4xx, 5xx), en‑têtes (caching, CORS), cookies et sessions. La compréhension de caches, CDN, et des politiques de sécurité (CORS, CSP) est clé pour les performances et la protection." },
-  { "term": "CLI", "definition": "Command‑Line Interface. Interface textuelle pour piloter des outils et scripts (Node, Python, Git). Idéale pour l’automatisation et la reproductibilité (Makefile/NPM scripts). Une bonne CLI offre aide intégrée, validation des options et codes de sortie cohérents." },
-  { "term": "RGPD", "definition": "Règlement Général sur la Protection des Données (UE). Fixe les obligations sur la collecte, le traitement et la conservation des données personnelles (base légale, consentement, droits des personnes, DPIA). Implique privacy by design, minimisation des données et sécurité adaptée au risque." },
-  { "term": "PHP", "definition": "Langage de script côté serveur largement utilisé pour le Web (WordPress, Laravel). Exécute du code sur le serveur pour générer du HTML/JSON. Bonnes pratiques : versions supportées, Composer, typage (>=8), frameworks, tests, sécurité (filtrage, CSRF, XSS)." },
-  { "term": "MERISE", "definition": "Méthode d’analyse et de conception des systèmes d’information. Sépare les niveaux conceptuel, logique et physique avec MCD/MLD/MPD et processus (MCT/MOT). Sert à modéliser données et traitements avant l’implémentation." },
-  { "term": "injection XSS", "definition": "Vulnérabilité permettant d’injecter du JavaScript dans une page vue par d’autres utilisateurs. Prévention : échapper la sortie selon le contexte, CSP, validation serveur/client, assainissement (sanitize) du HTML, utiliser des frameworks qui échappent par défaut." },
-  { "term": "injection SQL", "definition": "Attaque consistant à insérer du SQL malveillant via des entrées utilisateur. Prévention : requêtes préparées/paramétrées, ORM, validation en liste blanche, moindre privilège sur la base, séparation des rôles, WAF et journalisation." },
-  { "term": "FTP", "definition": "File Transfer Protocol. Protocole de transfert de fichiers. Préférer SFTP/FTPS pour la sécurité. Utilisé pour déployer ou échanger des fichiers ; attention aux droits, modes passif/actif et à l’automatisation par scripts." },
-  { "term": "docker", "definition": "Plateforme de conteneurisation. Emballe application et dépendances dans des images exécutées en conteneurs. Avantages : portabilité, isolation, CI/CD. Bonnes pratiques : images minces, multi‑stage builds, gestion des secrets, healthchecks, orchestration (Docker Compose/Kubernetes)." },
-  { "term": "PDO", "definition": "PHP Data Objects. Interface unifiée d’accès aux bases de données en PHP. Fournit des requêtes préparées (prévention injections SQL), gestion des transactions, exceptions et pilotes multiples (MySQL, PostgreSQL…). Bonnes pratiques : DSN explicite, paramètres bindés, modes de fetch clairs." },
-  { "term": "MCD", "definition": "Modèle Conceptuel de Données (MERISE). Représente les entités, associations et cardinalités du domaine, indépendant de toute technologie. Sert de base à la transformation vers le MLD." },
-  { "term": "MLD", "definition": "Modèle Logique de Données (MERISE). Décline le MCD en schéma relationnel logique (tables, clés primaires/étrangères, normalisation) sans encore figer les aspects physiques du SGBD." },
-  { "term": "MPD", "definition": "Modèle Physique de Données (MERISE). Concrétise le MLD dans un SGBD précis : types de colonnes, index, contraintes, partitions, performances et options d’implémentation." },
-  { "term": "Encapsulation", "definition": "Principe POO qui cache l’état interne et expose une interface contrôlée. Protège les invariants (getters/setters, méthodes), limite les effets de bord et favorise la maintenance ; l’immuabilité peut renforcer l’encapsulation." },
-  { "term": "Héritage", "definition": "Mécanisme POO de spécialisation (relation ‘est‑un’) permettant la réutilisation et la polymorphie. À utiliser avec parcimonie (attention aux hiérarchies profondes) ; souvent préférer la composition et respecter le LSP." },
-  { "term": "modèle objet", "definition": "Représentation des entités et de leurs relations dans un domaine métier sous forme d’objets. Sert de base au modèle de domaine et à la conception POO (classes, agrégats, valeurs, identités). Objectif : aligner le code sur le langage du métier (DDD), limiter l’anémie du modèle et clarifier les invariants." },
-  { "term": "HTTPS", "definition": "HyperText Transfer Protocol Secure (HTTP sur TLS). Chiffre les échanges, garantit l’intégrité et l’authenticité du serveur via certificats X.509. Bonnes pratiques : TLS 1.2+ (ou 1.3), HSTS, redirection 301 vers https, PFS, OCSP stapling, renouvellement automatique des certificats (Let’s Encrypt), configuration sûre des suites cryptographiques." },
-  { "term": "man in the middle", "definition": "Attaque d’interception/altération du trafic entre client et serveur (MITM). L’attaquant se place ‘au milieu’ pour lire/modifier les données. Prévention : HTTPS/TLS correctement configuré, non‑acceptation des certificats non valides, pinning, DNSSEC/DoH, mTLS/VPN sur réseaux non fiables, protection contre le downgrade et contre les proxys malveillants." }
+  {
+    "term": "POO",
+    "definition": "Programmation Orientée Objet. Paradigme qui organise le code en classes et objets avec encapsulation, héritage et polymorphisme pour modéliser le domaine. Elle favorise la réutilisabilité et la maintenabilité (SOLID), mais nécessite une bonne conception pour éviter l’anti‑pattern ‘God Object’."
+  },
+  {
+    "term": "MVC",
+    "definition": "Modèle–Vue–Contrôleur. Architecture séparant les responsabilités : Modèle (données/logiciel métier), Vue (présentation) et Contrôleur (orchestration/flux). Cette séparation facilite les tests, l’évolutivité et la collaboration UI/Back. Exemples : Spring MVC, Laravel, Rails, frameworks front inspirés (Vue/React avec patterns)."
+  },
+  {
+    "term": "API",
+    "definition": "Interface de Programmation d’Application. Contrat exposant des fonctionnalités ou des données à d’autres logiciels via des endpoints, des schémas et des règles d’authentification. Une bonne API est documentée (OpenAPI/Swagger), versionnée, testée et respecte les codes d’erreur et quotas pour garantir fiabilité et sécurité."
+  },
+  {
+    "term": "CRUD",
+    "definition": "Create, Read, Update, Delete. Quatre opérations fondamentales sur les données, souvent exposées via une API REST et reliées aux verbes HTTP. Elles constituent la base d’une interface d’administration, d’un back‑office ou d’un microservice persistant."
+  },
+  {
+    "term": "SQL",
+    "definition": "Structured Query Language. Langage standard pour interroger et manipuler des bases relationnelles (SELECT, JOIN, GROUP BY, transactions). Les bonnes pratiques incluent l’indexation, la normalisation/dénormalisation raisonnée, les vues matérialisées et la prévention des injections via requêtes paramétrées."
+  },
+  {
+    "term": "UML",
+    "definition": "Unified Modeling Language. Langage de modélisation visuelle pour analyser et concevoir des systèmes : cas d’usage, diagrammes de classes, de séquence, d’activité, de déploiement. Il facilite la communication entre parties prenantes et sert de support à la documentation vivante."
+  },
+  {
+    "term": "IDE",
+    "definition": "Integrated Development Environment, Environnement de Développement Intégré (p. ex. VS Code, IntelliJ). Il regroupe éditeur, refactoring, débogueur, intégration Git, exécution de tests et extensions. Un IDE bien configuré améliore la productivité et la qualité (lint, formatage, snippets, inspections)."
+  },
+  {
+    "term": "GIT",
+    "definition": "Système de contrôle de version distribué. Permet de suivre l’historique, travailler en branches (feature, release, hotfix), faire des revues (PR/MR) et gérer les conflits/merges. Bonnes pratiques : commits atomiques et message clair, rebase/squash quand pertinent, CI à chaque push."
+  },
+  {
+    "term": "JSON",
+    "definition": "JavaScript Object Notation. Format texte léger clé/valeur largement utilisé dans les APIs et configurations. Lisible par humains et machines, il supporte objets, tableaux, booléens, nombres et null. Attention aux pièges : pas de commentaires natifs, gestion des dates/BigInt et encodage UTF‑8."
+  },
+  {
+    "term": "HTTP",
+    "definition": "HyperText Transfer Protocol. Protocole du Web pour transporter requêtes/réponses avec méthodes (GET, POST…), statuts (2xx, 4xx, 5xx), en‑têtes (caching, CORS), cookies et sessions. La compréhension de caches, CDN, et des politiques de sécurité (CORS, CSP) est clé pour les performances et la protection."
+  },
+  {
+    "term": "CLI",
+    "definition": "Command‑Line Interface. Interface textuelle pour piloter des outils et scripts (Node, Python, Git). Idéale pour l’automatisation et la reproductibilité (Makefile/NPM scripts). Une bonne CLI offre aide intégrée, validation des options et codes de sortie cohérents."
+  },
+  {
+    "term": "RGPD",
+    "definition": "Règlement Général sur la Protection des Données (UE). Fixe les obligations sur la collecte, le traitement et la conservation des données personnelles (base légale, consentement, droits des personnes, DPIA). Implique privacy by design, minimisation des données et sécurité adaptée au risque."
+  },
+  {
+    "term": "PHP",
+    "definition": "Langage de script côté serveur largement utilisé pour le Web (WordPress, Laravel). Exécute du code sur le serveur pour générer du HTML/JSON. Bonnes pratiques : versions supportées, Composer, typage (>=8), frameworks, tests, sécurité (filtrage, CSRF, XSS)."
+  },
+  {
+    "term": "MERISE",
+    "definition": "Méthode d’analyse et de conception des systèmes d’information. Sépare les niveaux conceptuel, logique et physique avec MCD/MLD/MPD et processus (MCT/MOT). Sert à modéliser données et traitements avant l’implémentation."
+  },
+  {
+    "term": "Injection XSS",
+    "definition": "Vulnérabilité permettant d’injecter du JavaScript dans une page vue par d’autres utilisateurs. Prévention : échapper la sortie selon le contexte, CSP, validation serveur/client, assainissement (sanitize) du HTML, utiliser des frameworks qui échappent par défaut."
+  },
+  {
+    "term": "Injection SQL",
+    "definition": "Attaque consistant à insérer du SQL malveillant via des entrées utilisateur. Prévention : requêtes préparées/paramétrées, ORM, validation en liste blanche, moindre privilège sur la base, séparation des rôles, WAF et journalisation."
+  },
+  {
+    "term": "FTP",
+    "definition": "File Transfer Protocol. Protocole de transfert de fichiers. Préférer SFTP/FTPS pour la sécurité. Utilisé pour déployer ou échanger des fichiers ; attention aux droits, modes passif/actif et à l’automatisation par scripts."
+  },
+  {
+    "term": "docker",
+    "definition": "Plateforme de conteneurisation. Emballe application et dépendances dans des images exécutées en conteneurs. Avantages : portabilité, isolation, CI/CD. Bonnes pratiques : images minces, multi‑stage builds, gestion des secrets, healthchecks, orchestration (Docker Compose/Kubernetes)."
+  },
+  {
+    "term": "PDO",
+    "definition": "PHP Data Objects. Interface unifiée d’accès aux bases de données en PHP. Fournit des requêtes préparées (prévention injections SQL), gestion des transactions, exceptions et pilotes multiples (MySQL, PostgreSQL…). Bonnes pratiques : DSN explicite, paramètres bindés, modes de fetch clairs."
+  },
+  {
+    "term": "MCD",
+    "definition": "Modèle Conceptuel de Données (MERISE). Représente les entités, associations et cardinalités du domaine, indépendant de toute technologie. Sert de base à la transformation vers le MLD."
+  },
+  {
+    "term": "MLD",
+    "definition": "Modèle Logique de Données (MERISE). Décline le MCD en schéma relationnel logique (tables, clés primaires/étrangères, normalisation) sans encore figer les aspects physiques du SGBD."
+  },
+  {
+    "term": "MPD",
+    "definition": "Modèle Physique de Données (MERISE). Concrétise le MLD dans un SGBD précis : types de colonnes, index, contraintes, partitions, performances et options d’implémentation."
+  },
+  {
+    "term": "Encapsulation",
+    "definition": "Principe POO qui cache l’état interne et expose une interface contrôlée. Protège les invariants (getters/setters, méthodes), limite les effets de bord et favorise la maintenance ; l’immuabilité peut renforcer l’encapsulation."
+  },
+  {
+    "term": "Héritage",
+    "definition": "Mécanisme POO de spécialisation (relation ‘est‑un’) permettant la réutilisation et la polymorphie. À utiliser avec parcimonie (attention aux hiérarchies profondes) ; souvent préférer la composition et respecter le LSP."
+  },
+  {
+    "term": "Modèle objet",
+    "definition": "Représentation des entités et de leurs relations dans un domaine métier sous forme d’objets. Sert de base au modèle de domaine et à la conception POO (classes, agrégats, valeurs, identités). Objectif : aligner le code sur le langage du métier (DDD), limiter l’anémie du modèle et clarifier les invariants."
+  },
+  {
+    "term": "HTTPS",
+    "definition": "HyperText Transfer Protocol Secure (HTTP sur TLS). Chiffre les échanges, garantit l’intégrité et l’authenticité du serveur via certificats X.509. Bonnes pratiques : TLS 1.2+ (ou 1.3), HSTS, redirection 301 vers https, PFS, OCSP stapling, renouvellement automatique des certificats (Let’s Encrypt), configuration sûre des suites cryptographiques."
+  },
+  {
+    "term": "Man in the middle",
+    "definition": "Attaque d’interception/altération du trafic entre client et serveur (MITM). L’attaquant se place ‘au milieu’ pour lire/modifier les données. Prévention : HTTPS/TLS correctement configuré, non‑acceptation des certificats non valides, pinning, DNSSEC/DoH, mTLS/VPN sur réseaux non fiables, protection contre le downgrade et contre les proxys malveillants."
+  },
+  {
+    "term": "Architecture MVC",
+    "definition": "Modèle d’organisation d’une application séparant les responsabilités en trois composants : Modèle (données), Vue (interface) et Contrôleur (logique de contrôle). Cette séparation facilite la maintenance, les tests et l’évolution du code."
+  },
+  {
+    "term": "Modèle (MVC)",
+    "definition": "Composant chargé de gérer les données et la logique métier. Il est indépendant de l’interface utilisateur et peut être réutilisé dans différents contextes."
+  },
+  {
+    "term": "Vue (MVC)",
+    "definition": "Composant responsable de l’affichage des données à l’utilisateur. Elle ne contient pas de logique métier et se limite à la présentation."
+  },
+  {
+    "term": "Contrôleur (MVC)",
+    "definition": "Composant qui reçoit les requêtes utilisateur, appelle les traitements nécessaires dans le modèle et retourne la vue appropriée. Il joue le rôle d’intermédiaire."
+  },
+  {
+    "term": "Couche métier",
+    "definition": "Partie de l’application contenant les règles de gestion spécifiques au domaine fonctionnel. Elle traduit les besoins métier en logique applicative."
+  },
+
+  {
+    "term": "API RESTful",
+    "definition": "API respectant les principes REST : ressources identifiées par URL, utilisation des méthodes HTTP et absence d’état côté serveur. Elle est conçue pour être simple, standardisée et scalable."
+  },
+  {
+    "term": "DTO",
+    "definition": "Objet utilisé pour transporter des données entre couches ou systèmes. Il ne contient pas de logique métier et sert uniquement à structurer les échanges."
+  },
+  {
+    "term": "SGBD",
+    "definition": "Logiciel permettant de créer, manipuler et administrer des bases de données. Il garantit la cohérence, la sécurité et l’intégrité des données."
+  },
+  {
+    "term": "Transaction",
+    "definition": "Ensemble d’opérations exécutées de manière atomique : soit toutes réussissent, soit aucune n’est appliquée. Cela garantit la cohérence des données même en cas d’erreur."
+  },
+  {
+    "term": "Index",
+    "definition": "Structure de données permettant d’accélérer l’accès aux enregistrements d’une table. Il améliore les performances des requêtes au prix d’un coût en écriture."
+  },
+  {
+    "term": "Clé primaire",
+    "definition": "Attribut unique identifiant chaque enregistrement d’une table. Elle ne peut pas contenir de valeur nulle."
+  },
+  {
+    "term": "Clé étrangère",
+    "definition": "Attribut reliant une table à une autre en référencant une clé primaire. Elle garantit la cohérence des relations entre tables."
+  },
+  {
+    "term": "Normalisation",
+    "definition": "Processus d’organisation des données visant à éliminer les redondances et anomalies. Elle améliore la cohérence et la maintenabilité des bases."
+  },
+  {
+    "term": "ORM",
+    "definition": "Technique permettant de manipuler une base relationnelle via des objets. Elle simplifie le développement en évitant d’écrire directement du SQL."
+  },
+  {
+    "term": "NoSQL",
+    "definition": "Type de base de données non relationnelle adaptée aux données volumineuses ou peu structurées. Elle privilégie la performance et la flexibilité."
+  },
+  {
+    "term": "Requête préparée",
+    "definition": "Requête SQL paramétrée compilée à l’avance. Elle protège contre les injections SQL et améliore les performances."
+  },
+  {
+    "term": "Jointure (JOIN)",
+    "definition": "Opération SQL permettant de combiner des données provenant de plusieurs tables. Elle est essentielle pour exploiter des modèles relationnels."
+  },
+  {
+    "term": "Vue (SQL)",
+    "definition": "Table virtuelle basée sur une requête SQL. Elle permet de simplifier des requêtes complexes ou de restreindre l’accès aux données."
+  },
+  {
+    "term": "Trigger",
+    "definition": "Procédure exécutée automatiquement lors d’un événement sur une table (INSERT, UPDATE, DELETE). Elle permet d’automatiser certains traitements."
+  },
+  {
+    "term": "Procédure stockée",
+    "definition": "Programme enregistré dans le SGBD et exécuté côté serveur. Elle permet de centraliser des traitements et d’améliorer les performances."
+  },
+  {
+    "term": "Cardinalité",
+    "definition": "Relation quantitative entre deux entités (1-1, 1-N, N-N). Elle décrit le nombre d’occurrences possibles entre deux tables."
+  },
+  {
+    "term": "Schéma de BDD",
+    "definition": "Structure globale d’une base de données (tables, colonnes, relations). Il représente le modèle logique des données."
+  },
+  {
+    "term": "Endpoint",
+    "definition": "URL exposée par une API permettant d’accéder à une ressource ou d’exécuter une action. Chaque endpoint correspond à une fonctionnalité précise."
+  },
+  {
+    "term": "Middleware",
+    "definition": "Composant intermédiaire exécuté lors du traitement d’une requête. Il permet d’ajouter des traitements transverses (authentification, logs, etc.)."
+  },
+  {
+    "term": "Requête HTTP",
+    "definition": "Message envoyé par un client vers un serveur pour demander une ressource. Elle contient une méthode, des headers et éventuellement un corps."
+  },
+  {
+    "term": "Réponse HTTP",
+    "definition": "Message retourné par le serveur contenant le résultat de la requête. Elle inclut un code de statut, des headers et éventuellement des données."
+  },
+  {
+    "term": "Méthodes HTTP",
+    "definition": "Verbes définissant l’action sur une ressource : GET (lecture), POST (création), PUT (mise à jour), DELETE (suppression). Elles structurent les API REST."
+  },
+  {
+    "term": "Code HTTP",
+    "definition": "Code numérique indiquant le résultat d’une requête (ex : 200 succès, 404 non trouvé, 500 erreur serveur). Il permet au client d’interpréter la réponse."
+  },
+  {
+    "term": "Header HTTP",
+    "definition": "Informations supplémentaires envoyées avec une requête ou une réponse. Ils décrivent le contexte (type de contenu, authentification, etc.)."
+  },
+  {
+    "term": "Payload",
+    "definition": "Données transportées dans le corps d’une requête ou d’une réponse. Il contient les informations utiles échangées entre client et serveur."
+  },
+  {
+    "term": "UTF-8",
+    "definition": "Format de représentation des caractères permettant de gérer la majorité des langues. Il garantit la compatibilité internationale."
+  },
+  {
+    "term": "JWT",
+    "definition": "Jeton sécurisé contenant des informations d’authentification signées. Il permet de gérer des sessions sans stockage côté serveur."
+  },
+  {
+    "term": "CORS",
+    "definition": "Mécanisme de sécurité contrôlant les requêtes entre domaines différents. Il empêche certains accès non autorisés côté navigateur."
+  },
+  {
+    "term": "Session",
+    "definition": "Mécanisme de stockage temporaire des données utilisateur côté serveur. Il permet de maintenir l’état entre plusieurs requêtes."
+  },
+  {
+    "term": "Cookie",
+    "definition": "Donnée stockée côté client envoyée automatiquement au serveur. Il est utilisé pour maintenir une session ou stocker des préférences."
+  },
+  {
+    "term": "Hashage",
+    "definition": "Transformation irréversible d’une donnée en empreinte. Utilisé principalement pour stocker des mots de passe de manière sécurisée."
+  },
+  {
+    "term": "Salage (salt)",
+    "definition": "Ajout d’une valeur aléatoire avant hashage. Cela empêche l’utilisation de tables de correspondance (rainbow tables)."
+  },
+  {
+    "term": "Pare-feu",
+    "definition": "Système filtrant les communications réseau selon des règles définies. Il protège contre les accès non autorisés."
+  },
+  {
+    "term": "Faille CSRF",
+    "definition": "Attaque exploitant la confiance d’un site envers un utilisateur authentifié. Elle permet d’exécuter des actions à son insu."
+  },
+  {
+    "term": "OWASP",
+    "definition": "Organisation qui recense et documente les principales vulnérabilités web. Elle sert de référence en sécurité applicative."
+  },
+  {
+    "term": "Moindre privilège",
+    "definition": "Principe consistant à accorder uniquement les droits nécessaires. Il limite l’impact d’une compromission."
+  },
+  {
+    "term": "Authentification",
+    "definition": "Processus de vérification de l’identité d’un utilisateur. Exemple : login/mot de passe."
+  },
+  {
+    "term": "Autorisation",
+    "definition": "Processus de vérification des droits d’un utilisateur authentifié. Elle détermine ce qu’il peut faire."
+  },
+  {
+    "term": "Authentification forte",
+    "definition": "Authentification utilisant plusieurs facteurs (mot de passe + code). Elle renforce la sécurité."
+  },
+  {
+    "term": "Gestion des rôles",
+    "definition": "Système d’attribution des droits basé sur des rôles. Il simplifie la gestion des permissions."
+  },
+  {
+    "term": "Sanitization",
+    "definition": "Nettoyage des données d’entrée pour éviter les injections. Elle est essentielle pour la sécurité des applications."
+  },
+  {
+    "term": "Framework",
+    "definition": "Structure logicielle imposant une organisation et fournissant des outils. Il accélère le développement et standardise les pratiques."
+  },
+  {
+    "term": "Bibliothèque",
+    "definition": "Ensemble de fonctions réutilisables. Contrairement à un framework, elle est appelée librement par le développeur."
+  },
+  {
+    "term": "Tests unitaires",
+    "definition": "Tests vérifiant une unité de code isolée. Ils permettent de valider le bon fonctionnement d’une fonction ou méthode."
+  },
+  {
+    "term": "Tests d’intégration",
+    "definition": "Tests vérifiant l’interaction entre plusieurs composants. Ils assurent que les modules fonctionnent ensemble."
+  },
+  {
+    "term": "Tests fonctionnels",
+    "definition": "Tests validant le comportement global de l’application. Ils vérifient la conformité aux besoins."
+  },
+  {
+    "term": "Debug",
+    "definition": "Processus de recherche et correction d’erreurs dans le code. Il est essentiel pour garantir la stabilité."
+  },
+  {
+    "term": "Compilation",
+    "definition": "Transformation du code source en code exécutable. Elle est utilisée dans les langages compilés."
+  },
+  {
+    "term": "Interpréteur",
+    "definition": "Programme exécutant directement le code source. Il permet une exécution immédiate sans compilation."
+  },
+  {
+    "term": "Versioning",
+    "definition": "Gestion des versions du code source dans le temps. Il permet de suivre les modifications et collaborer."
+  },
+  {
+    "term": "Refactoring",
+    "definition": "Amélioration du code sans modifier son comportement. Il vise à améliorer la lisibilité et la maintenabilité."
+  },
+  {
+    "term": "Dette technique",
+    "definition": "Accumulation de compromis techniques dégradant la qualité du code. Elle rend les évolutions plus coûteuses."
+  },
+  {
+    "term": "Conv. nommage",
+    "definition": "Règles définissant la manière de nommer variables et fonctions. Elles améliorent la lisibilité et la cohérence."
+  },
+  {
+    "term": "Doc technique",
+    "definition": "Documentation destinée aux développeurs. Elle décrit le fonctionnement interne du système."
+  },
+  {
+    "term": "Doc utilisateur",
+    "definition": "Documentation destinée aux utilisateurs finaux. Elle explique l’utilisation de l’application."
+  },
+  {
+    "term": "Logs",
+    "definition": "Enregistrement des événements d’une application. Ils sont utilisés pour le suivi et le diagnostic."
+  },
+  {
+    "term": "Eexceptions",
+    "definition": "Mécanisme permettant de gérer les erreurs à l’exécution. Il évite les plantages et améliore la robustesse."
+  },
+  {
+    "term": "Cahier des charges",
+    "definition": "Document décrivant les besoins, contraintes et objectifs d’un projet. Il sert de référence contractuelle."
+  },
+  {
+    "term": "Spécs fonctionnelles",
+    "definition": "Description des fonctionnalités attendues du point de vue utilisateur. Elles traduisent le besoin sans technique."
+  },
+  {
+    "term": "Spécs techniques",
+    "definition": "Description des solutions techniques retenues pour répondre au besoin. Elles guident le développement."
+  },
+  {
+    "term": "Recette",
+    "definition": "Validation finale de l’application par rapport aux exigences. Elle permet de vérifier que le produit est conforme."
+  }
 ]

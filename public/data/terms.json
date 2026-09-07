@@ -64,10 +64,6 @@
     "definition": "Attaque consistant à insérer du SQL malveillant via des entrées utilisateur. Prévention : requêtes préparées/paramétrées, ORM, validation en liste blanche, moindre privilège sur la base, séparation des rôles, WAF et journalisation."
   },
   {
-    "term": "FTP",
-    "definition": "File Transfer Protocol. Protocole de transfert de fichiers. Préférer SFTP/FTPS pour la sécurité. Utilisé pour déployer ou échanger des fichiers ; attention aux droits, modes passif/actif et à l’automatisation par scripts."
-  },
-  {
     "term": "docker",
     "definition": "Plateforme de conteneurisation. Emballe application et dépendances dans des images exécutées en conteneurs. Avantages : portabilité, isolation, CI/CD. Bonnes pratiques : images minces, multi‑stage builds, gestion des secrets, healthchecks, orchestration (Docker Compose/Kubernetes)."
   },
@@ -96,32 +92,12 @@
     "definition": "Mécanisme POO de spécialisation (relation ‘est‑un’) permettant la réutilisation et la polymorphie. À utiliser avec parcimonie (attention aux hiérarchies profondes) ; souvent préférer la composition et respecter le LSP."
   },
   {
-    "term": "Modèle objet",
-    "definition": "Représentation des entités et de leurs relations dans un domaine métier sous forme d’objets. Sert de base au modèle de domaine et à la conception POO (classes, agrégats, valeurs, identités). Objectif : aligner le code sur le langage du métier (DDD), limiter l’anémie du modèle et clarifier les invariants."
-  },
-  {
     "term": "HTTPS",
     "definition": "HyperText Transfer Protocol Secure (HTTP sur TLS). Chiffre les échanges, garantit l’intégrité et l’authenticité du serveur via certificats X.509. Bonnes pratiques : TLS 1.2+ (ou 1.3), HSTS, redirection 301 vers https, PFS, OCSP stapling, renouvellement automatique des certificats (Let’s Encrypt), configuration sûre des suites cryptographiques."
   },
   {
     "term": "Man in the middle",
     "definition": "Attaque d’interception/altération du trafic entre client et serveur (MITM). L’attaquant se place ‘au milieu’ pour lire/modifier les données. Prévention : HTTPS/TLS correctement configuré, non‑acceptation des certificats non valides, pinning, DNSSEC/DoH, mTLS/VPN sur réseaux non fiables, protection contre le downgrade et contre les proxys malveillants."
-  },
-  {
-    "term": "Architecture MVC",
-    "definition": "Modèle d’organisation d’une application séparant les responsabilités en trois composants : Modèle (données), Vue (interface) et Contrôleur (logique de contrôle). Cette séparation facilite la maintenance, les tests et l’évolution du code."
-  },
-  {
-    "term": "Modèle (MVC)",
-    "definition": "Composant chargé de gérer les données et la logique métier. Il est indépendant de l’interface utilisateur et peut être réutilisé dans différents contextes."
-  },
-  {
-    "term": "Vue (MVC)",
-    "definition": "Composant responsable de l’affichage des données à l’utilisateur. Elle ne contient pas de logique métier et se limite à la présentation."
-  },
-  {
-    "term": "Contrôleur (MVC)",
-    "definition": "Composant qui reçoit les requêtes utilisateur, appelle les traitements nécessaires dans le modèle et retourne la vue appropriée. Il joue le rôle d’intermédiaire."
   },
   {
     "term": "Couche métier",
@@ -133,20 +109,12 @@
     "definition": "API respectant les principes REST : ressources identifiées par URL, utilisation des méthodes HTTP et absence d’état côté serveur. Elle est conçue pour être simple, standardisée et scalable."
   },
   {
-    "term": "DTO",
-    "definition": "Objet utilisé pour transporter des données entre couches ou systèmes. Il ne contient pas de logique métier et sert uniquement à structurer les échanges."
-  },
-  {
     "term": "SGBD",
     "definition": "Logiciel permettant de créer, manipuler et administrer des bases de données. Il garantit la cohérence, la sécurité et l’intégrité des données."
   },
   {
     "term": "Transaction",
     "definition": "Ensemble d’opérations exécutées de manière atomique : soit toutes réussissent, soit aucune n’est appliquée. Cela garantit la cohérence des données même en cas d’erreur."
-  },
-  {
-    "term": "Index",
-    "definition": "Structure de données permettant d’accélérer l’accès aux enregistrements d’une table. Il améliore les performances des requêtes au prix d’un coût en écriture."
   },
   {
     "term": "Clé primaire",
@@ -177,32 +145,12 @@
     "definition": "Opération SQL permettant de combiner des données provenant de plusieurs tables. Elle est essentielle pour exploiter des modèles relationnels."
   },
   {
-    "term": "Vue (SQL)",
-    "definition": "Table virtuelle basée sur une requête SQL. Elle permet de simplifier des requêtes complexes ou de restreindre l’accès aux données."
-  },
-  {
-    "term": "Trigger",
-    "definition": "Procédure exécutée automatiquement lors d’un événement sur une table (INSERT, UPDATE, DELETE). Elle permet d’automatiser certains traitements."
-  },
-  {
-    "term": "Procédure stockée",
-    "definition": "Programme enregistré dans le SGBD et exécuté côté serveur. Elle permet de centraliser des traitements et d’améliorer les performances."
-  },
-  {
     "term": "Cardinalité",
     "definition": "Relation quantitative entre deux entités (1-1, 1-N, N-N). Elle décrit le nombre d’occurrences possibles entre deux tables."
   },
   {
-    "term": "Schéma de BDD",
-    "definition": "Structure globale d’une base de données (tables, colonnes, relations). Il représente le modèle logique des données."
-  },
-  {
     "term": "Endpoint",
     "definition": "URL exposée par une API permettant d’accéder à une ressource ou d’exécuter une action. Chaque endpoint correspond à une fonctionnalité précise."
-  },
-  {
-    "term": "Middleware",
-    "definition": "Composant intermédiaire exécuté lors du traitement d’une requête. Il permet d’ajouter des traitements transverses (authentification, logs, etc.)."
   },
   {
     "term": "Requête HTTP",
@@ -225,20 +173,8 @@
     "definition": "Informations supplémentaires envoyées avec une requête ou une réponse. Ils décrivent le contexte (type de contenu, authentification, etc.)."
   },
   {
-    "term": "Payload",
-    "definition": "Données transportées dans le corps d’une requête ou d’une réponse. Il contient les informations utiles échangées entre client et serveur."
-  },
-  {
     "term": "UTF-8",
     "definition": "Format de représentation des caractères permettant de gérer la majorité des langues. Il garantit la compatibilité internationale."
-  },
-  {
-    "term": "JWT",
-    "definition": "Jeton sécurisé contenant des informations d’authentification signées. Il permet de gérer des sessions sans stockage côté serveur."
-  },
-  {
-    "term": "CORS",
-    "definition": "Mécanisme de sécurité contrôlant les requêtes entre domaines différents. Il empêche certains accès non autorisés côté navigateur."
   },
   {
     "term": "Session",
@@ -252,46 +188,7 @@
     "term": "Hashage",
     "definition": "Transformation irréversible d’une donnée en empreinte. Utilisé principalement pour stocker des mots de passe de manière sécurisée."
   },
-  {
-    "term": "Salage (salt)",
-    "definition": "Ajout d’une valeur aléatoire avant hashage. Cela empêche l’utilisation de tables de correspondance (rainbow tables)."
-  },
-  {
-    "term": "Pare-feu",
-    "definition": "Système filtrant les communications réseau selon des règles définies. Il protège contre les accès non autorisés."
-  },
-  {
-    "term": "Faille CSRF",
-    "definition": "Attaque exploitant la confiance d’un site envers un utilisateur authentifié. Elle permet d’exécuter des actions à son insu."
-  },
-  {
-    "term": "OWASP",
-    "definition": "Organisation qui recense et documente les principales vulnérabilités web. Elle sert de référence en sécurité applicative."
-  },
-  {
-    "term": "Moindre privilège",
-    "definition": "Principe consistant à accorder uniquement les droits nécessaires. Il limite l’impact d’une compromission."
-  },
-  {
-    "term": "Authentification",
-    "definition": "Processus de vérification de l’identité d’un utilisateur. Exemple : login/mot de passe."
-  },
-  {
-    "term": "Autorisation",
-    "definition": "Processus de vérification des droits d’un utilisateur authentifié. Elle détermine ce qu’il peut faire."
-  },
-  {
-    "term": "Authentification forte",
-    "definition": "Authentification utilisant plusieurs facteurs (mot de passe + code). Elle renforce la sécurité."
-  },
-  {
-    "term": "Gestion des rôles",
-    "definition": "Système d’attribution des droits basé sur des rôles. Il simplifie la gestion des permissions."
-  },
-  {
-    "term": "Sanitization",
-    "definition": "Nettoyage des données d’entrée pour éviter les injections. Elle est essentielle pour la sécurité des applications."
-  },
+
   {
     "term": "Framework",
     "definition": "Structure logicielle imposant une organisation et fournissant des outils. Il accélère le développement et standardise les pratiques."
@@ -300,76 +197,9 @@
     "term": "Bibliothèque",
     "definition": "Ensemble de fonctions réutilisables. Contrairement à un framework, elle est appelée librement par le développeur."
   },
-  {
-    "term": "Tests unitaires",
-    "definition": "Tests vérifiant une unité de code isolée. Ils permettent de valider le bon fonctionnement d’une fonction ou méthode."
-  },
-  {
-    "term": "Tests d’intégration",
-    "definition": "Tests vérifiant l’interaction entre plusieurs composants. Ils assurent que les modules fonctionnent ensemble."
-  },
-  {
-    "term": "Tests fonctionnels",
-    "definition": "Tests validant le comportement global de l’application. Ils vérifient la conformité aux besoins."
-  },
-  {
-    "term": "Debug",
-    "definition": "Processus de recherche et correction d’erreurs dans le code. Il est essentiel pour garantir la stabilité."
-  },
-  {
-    "term": "Compilation",
-    "definition": "Transformation du code source en code exécutable. Elle est utilisée dans les langages compilés."
-  },
-  {
-    "term": "Interpréteur",
-    "definition": "Programme exécutant directement le code source. Il permet une exécution immédiate sans compilation."
-  },
+
   {
     "term": "Versioning",
     "definition": "Gestion des versions du code source dans le temps. Il permet de suivre les modifications et collaborer."
-  },
-  {
-    "term": "Refactoring",
-    "definition": "Amélioration du code sans modifier son comportement. Il vise à améliorer la lisibilité et la maintenabilité."
-  },
-  {
-    "term": "Dette technique",
-    "definition": "Accumulation de compromis techniques dégradant la qualité du code. Elle rend les évolutions plus coûteuses."
-  },
-  {
-    "term": "Conv. nommage",
-    "definition": "Règles définissant la manière de nommer variables et fonctions. Elles améliorent la lisibilité et la cohérence."
-  },
-  {
-    "term": "Doc technique",
-    "definition": "Documentation destinée aux développeurs. Elle décrit le fonctionnement interne du système."
-  },
-  {
-    "term": "Doc utilisateur",
-    "definition": "Documentation destinée aux utilisateurs finaux. Elle explique l’utilisation de l’application."
-  },
-  {
-    "term": "Logs",
-    "definition": "Enregistrement des événements d’une application. Ils sont utilisés pour le suivi et le diagnostic."
-  },
-  {
-    "term": "Eexceptions",
-    "definition": "Mécanisme permettant de gérer les erreurs à l’exécution. Il évite les plantages et améliore la robustesse."
-  },
-  {
-    "term": "Cahier des charges",
-    "definition": "Document décrivant les besoins, contraintes et objectifs d’un projet. Il sert de référence contractuelle."
-  },
-  {
-    "term": "Spécs fonctionnelles",
-    "definition": "Description des fonctionnalités attendues du point de vue utilisateur. Elles traduisent le besoin sans technique."
-  },
-  {
-    "term": "Spécs techniques",
-    "definition": "Description des solutions techniques retenues pour répondre au besoin. Elles guident le développement."
-  },
-  {
-    "term": "Recette",
-    "definition": "Validation finale de l’application par rapport aux exigences. Elle permet de vérifier que le produit est conforme."
   }
 ]

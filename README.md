@@ -1,7 +1,7 @@
 # Double Tirage au Sort — Roue spectaculaire (React + Vite)
 
 Application web pédagogique permettant, à chaque séance, de tirer au sort:
-- un terme parmi un sous-ensemble aléatoire de `24` notions (avec sa définition officielle),
+- un terme parmi un sous-ensemble aléatoire de `24` notions (avec sa définition de référence),
 - un étudiant parmi une liste (avec possibilité de décocher les absents),
 - avec un affichage spectaculaire via deux roues qui tournent pendant ~10 secondes pour créer du suspens,
 - puis un bouton pour révéler la « vraie » définition et comparer.
@@ -36,7 +36,7 @@ Ce projet est 100% statique (pas de backend). Il s’appuie sur React 18 et Vite
 - Double roue (termes + étudiants) avec animation ~10s.
 - À chaque chargement (et à chaque « Réinitialiser »), une nouvelle liste aléatoire de `24` termes est constituée depuis `terms.json`.
 - Possibilité d’exclure des étudiants (absents) via cases à cocher.
-- Affichage de la définition « officielle » après tirage, pour comparaison.
+- Affichage de la définition de référence après tirage, pour comparaison.
 - État d’exclusion mémorisé localement (localStorage).
 - Données simples modifiables via JSON.
 
@@ -136,13 +136,15 @@ Notes:
 - L’état des cases cochées (présence) est mémorisé localement via `localStorage`.
 - Le tirage des termes ne se fait pas sur toute la base à chaque spin: l’application crée d’abord un pool aléatoire de `24` termes, puis tire dans ce pool.
 - Bonnes pratiques pour `terms.json`: évitez les doublons de `term` (idéalement comparaison insensible à la casse).
+- La sélection et la formulation des termes sont documentées dans [`docs/VOCABULAIRE.md`](docs/VOCABULAIRE.md).
+- Exécutez `npm run validate:data` après chaque mise à jour : le build de production lance également ce contrôle.
 
 
 ## Utilisation
 1. Démarrez l’app en dev ou ouvrez la version déployée.
 2. Décochez les étudiants absents dans la liste.
 3. Cliquez sur « Lancer la roue » pour démarrer les deux tirages (animation ~10s).
-4. À la fin, cliquez sur « Afficher la vraie définition » pour comparer avec la réponse attendue.
+4. À la fin, cliquez sur « Afficher la définition » pour comparer avec la définition de référence.
 5. Utilisez « Réinitialiser » pour repartir de zéro : une nouvelle sélection aléatoire de `24` termes est alors générée.
 
 

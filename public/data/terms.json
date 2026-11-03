@@ -1,205 +1,314 @@
 [
   {
-    "term": "POO",
-    "definition": "Programmation Orientée Objet. Paradigme qui organise le code en classes et objets avec encapsulation, héritage et polymorphisme pour modéliser le domaine. Elle favorise la réutilisabilité et la maintenabilité (SOLID), mais nécessite une bonne conception pour éviter l’anti‑pattern ‘God Object’."
-  },
-  {
-    "term": "MVC",
-    "definition": "Modèle–Vue–Contrôleur. Architecture séparant les responsabilités : Modèle (données/logiciel métier), Vue (présentation) et Contrôleur (orchestration/flux). Cette séparation facilite les tests, l’évolutivité et la collaboration UI/Back. Exemples : Spring MVC, Laravel, Rails, frameworks front inspirés (Vue/React avec patterns)."
-  },
-  {
-    "term": "API",
-    "definition": "Interface de Programmation d’Application. Contrat exposant des fonctionnalités ou des données à d’autres logiciels via des endpoints, des schémas et des règles d’authentification. Une bonne API est documentée (OpenAPI/Swagger), versionnée, testée et respecte les codes d’erreur et quotas pour garantir fiabilité et sécurité."
-  },
-  {
-    "term": "CRUD",
-    "definition": "Create, Read, Update, Delete. Quatre opérations fondamentales sur les données, souvent exposées via une API REST et reliées aux verbes HTTP. Elles constituent la base d’une interface d’administration, d’un back‑office ou d’un microservice persistant."
-  },
-  {
-    "term": "SQL",
-    "definition": "Structured Query Language. Langage standard pour interroger et manipuler des bases relationnelles (SELECT, JOIN, GROUP BY, transactions). Les bonnes pratiques incluent l’indexation, la normalisation/dénormalisation raisonnée, les vues matérialisées et la prévention des injections via requêtes paramétrées."
-  },
-  {
-    "term": "UML",
-    "definition": "Unified Modeling Language. Langage de modélisation visuelle pour analyser et concevoir des systèmes : cas d’usage, diagrammes de classes, de séquence, d’activité, de déploiement. Il facilite la communication entre parties prenantes et sert de support à la documentation vivante."
-  },
-  {
-    "term": "IDE",
-    "definition": "Integrated Development Environment, Environnement de Développement Intégré (p. ex. VS Code, IntelliJ). Il regroupe éditeur, refactoring, débogueur, intégration Git, exécution de tests et extensions. Un IDE bien configuré améliore la productivité et la qualité (lint, formatage, snippets, inspections)."
-  },
-  {
-    "term": "GIT",
-    "definition": "Système de contrôle de version distribué. Permet de suivre l’historique, travailler en branches (feature, release, hotfix), faire des revues (PR/MR) et gérer les conflits/merges. Bonnes pratiques : commits atomiques et message clair, rebase/squash quand pertinent, CI à chaque push."
-  },
-  {
-    "term": "JSON",
-    "definition": "JavaScript Object Notation. Format texte léger clé/valeur largement utilisé dans les APIs et configurations. Lisible par humains et machines, il supporte objets, tableaux, booléens, nombres et null. Attention aux pièges : pas de commentaires natifs, gestion des dates/BigInt et encodage UTF‑8."
-  },
-  {
-    "term": "HTTP",
-    "definition": "HyperText Transfer Protocol. Protocole du Web pour transporter requêtes/réponses avec méthodes (GET, POST…), statuts (2xx, 4xx, 5xx), en‑têtes (caching, CORS), cookies et sessions. La compréhension de caches, CDN, et des politiques de sécurité (CORS, CSP) est clé pour les performances et la protection."
-  },
-  {
-    "term": "CLI",
-    "definition": "Command‑Line Interface. Interface textuelle pour piloter des outils et scripts (Node, Python, Git). Idéale pour l’automatisation et la reproductibilité (Makefile/NPM scripts). Une bonne CLI offre aide intégrée, validation des options et codes de sortie cohérents."
-  },
-  {
-    "term": "RGPD",
-    "definition": "Règlement Général sur la Protection des Données (UE). Fixe les obligations sur la collecte, le traitement et la conservation des données personnelles (base légale, consentement, droits des personnes, DPIA). Implique privacy by design, minimisation des données et sécurité adaptée au risque."
-  },
-  {
     "term": "PHP",
-    "definition": "Langage de script côté serveur largement utilisé pour le Web (WordPress, Laravel). Exécute du code sur le serveur pour générer du HTML/JSON. Bonnes pratiques : versions supportées, Composer, typage (>=8), frameworks, tests, sécurité (filtrage, CSRF, XSS)."
+    "definition": "Langage de programmation principalement exécuté côté serveur. Dans une application web, PHP reçoit la requête HTTP, applique les traitements, accède éventuellement aux données, puis produit une réponse telle qu'une page HTML ou un document JSON."
   },
   {
-    "term": "MERISE",
-    "definition": "Méthode d’analyse et de conception des systèmes d’information. Sépare les niveaux conceptuel, logique et physique avec MCD/MLD/MPD et processus (MCT/MOT). Sert à modéliser données et traitements avant l’implémentation."
+    "term": "POO",
+    "definition": "Programmation orientée objet. Paradigme qui organise le programme autour d'objets possédant un état et des comportements, définis par des classes. Elle facilite la modélisation du domaine, l'encapsulation et la répartition des responsabilités."
   },
   {
-    "term": "Injection XSS",
-    "definition": "Vulnérabilité permettant d’injecter du JavaScript dans une page vue par d’autres utilisateurs. Prévention : échapper la sortie selon le contexte, CSP, validation serveur/client, assainissement (sanitize) du HTML, utiliser des frameworks qui échappent par défaut."
+    "term": "Classe",
+    "definition": "Définition d'un type d'objet regroupant des propriétés et des méthodes. Une classe décrit la structure et les comportements communs aux objets qui seront instanciés à partir d'elle."
   },
   {
-    "term": "Injection SQL",
-    "definition": "Attaque consistant à insérer du SQL malveillant via des entrées utilisateur. Prévention : requêtes préparées/paramétrées, ORM, validation en liste blanche, moindre privilège sur la base, séparation des rôles, WAF et journalisation."
-  },
-  {
-    "term": "docker",
-    "definition": "Plateforme de conteneurisation. Emballe application et dépendances dans des images exécutées en conteneurs. Avantages : portabilité, isolation, CI/CD. Bonnes pratiques : images minces, multi‑stage builds, gestion des secrets, healthchecks, orchestration (Docker Compose/Kubernetes)."
-  },
-  {
-    "term": "PDO",
-    "definition": "PHP Data Objects. Interface unifiée d’accès aux bases de données en PHP. Fournit des requêtes préparées (prévention injections SQL), gestion des transactions, exceptions et pilotes multiples (MySQL, PostgreSQL…). Bonnes pratiques : DSN explicite, paramètres bindés, modes de fetch clairs."
-  },
-  {
-    "term": "MCD",
-    "definition": "Modèle Conceptuel de Données (MERISE). Représente les entités, associations et cardinalités du domaine, indépendant de toute technologie. Sert de base à la transformation vers le MLD."
-  },
-  {
-    "term": "MLD",
-    "definition": "Modèle Logique de Données (MERISE). Décline le MCD en schéma relationnel logique (tables, clés primaires/étrangères, normalisation) sans encore figer les aspects physiques du SGBD."
-  },
-  {
-    "term": "MPD",
-    "definition": "Modèle Physique de Données (MERISE). Concrétise le MLD dans un SGBD précis : types de colonnes, index, contraintes, partitions, performances et options d’implémentation."
+    "term": "Objet",
+    "definition": "Instance concrète d'une classe, dotée de son propre état. En PHP, un objet est créé avec new et ses méthodes permettent d'agir sur cet état en respectant les règles prévues par la classe."
   },
   {
     "term": "Encapsulation",
-    "definition": "Principe POO qui cache l’état interne et expose une interface contrôlée. Protège les invariants (getters/setters, méthodes), limite les effets de bord et favorise la maintenance ; l’immuabilité peut renforcer l’encapsulation."
+    "definition": "Principe de POO consistant à protéger l'état interne d'un objet et à n'exposer que les opérations nécessaires. Elle permet à la classe de préserver ses invariants et limite les modifications incohérentes depuis l'extérieur."
   },
   {
     "term": "Héritage",
-    "definition": "Mécanisme POO de spécialisation (relation ‘est‑un’) permettant la réutilisation et la polymorphie. À utiliser avec parcimonie (attention aux hiérarchies profondes) ; souvent préférer la composition et respecter le LSP."
+    "definition": "Mécanisme de POO par lequel une classe spécialisée reprend et adapte les caractéristiques d'une classe plus générale. Il modélise une relation « est un », mais la composition est souvent préférable lorsqu'il s'agit seulement de réutiliser un comportement."
+  },
+  {
+    "term": "Exception",
+    "definition": "Objet signalant qu'un traitement ne peut pas suivre son déroulement normal. Une exception est levée avec throw et peut être interceptée avec try/catch ; elle peut représenter une défaillance technique ou une violation exceptionnelle d'une règle du domaine."
+  },
+  {
+    "term": "Namespace PHP",
+    "definition": "Espace de noms permettant d'organiser les classes et d'éviter les collisions entre noms identiques. L'instruction namespace déclare l'espace d'une classe et use permet de l'importer sous un nom utilisable dans le fichier."
+  },
+  {
+    "term": "Framework",
+    "definition": "Cadre applicatif fournissant une structure, des conventions et des composants réutilisables pour développer une application. Le framework pilote une partie du cycle d'exécution et appelle le code du développeur aux endroits prévus."
+  },
+  {
+    "term": "Bibliothèque logicielle",
+    "definition": "Ensemble de fonctions ou de classes réutilisables qu'un programme appelle lorsqu'il en a besoin. À la différence d'un framework, une bibliothèque n'impose généralement pas l'architecture globale ni le cycle d'exécution de l'application."
+  },
+  {
+    "term": "Composer",
+    "definition": "Gestionnaire de dépendances de l'écosystème PHP. Il installe les paquets décrits dans composer.json, consigne les versions résolues dans composer.lock et génère notamment le fichier vendor/autoload.php."
+  },
+  {
+    "term": "Autoloading PSR-4",
+    "definition": "Convention de chargement automatique qui associe un préfixe de namespace à un répertoire. Grâce à la configuration PSR-4 de Composer, une classe peut être chargée à la demande sans multiplier les require manuels."
+  },
+  {
+    "term": "Slim 4",
+    "definition": "Micro-framework PHP centré sur le routage et le traitement des requêtes et réponses HTTP. Slim 4 n'impose ni ORM, ni moteur de vues, ni architecture MVC : ces choix restent explicites dans l'application."
+  },
+  {
+    "term": "Medoo",
+    "definition": "Bibliothèque légère d'accès aux bases de données construite au-dessus de PDO. Medoo simplifie l'écriture de requêtes courantes, mais ne remplace ni la compréhension de SQL, ni la validation métier, et ce n'est pas un ORM."
+  },
+  {
+    "term": "Git",
+    "definition": "Système distribué de gestion de versions. Il enregistre l'historique du code, permet le travail en branches, la fusion des modifications et la traçabilité des évolutions au moyen de commits identifiés."
+  },
+  {
+    "term": "IDE",
+    "definition": "Environnement de développement intégré réunissant dans une même application l'édition du code, la navigation, l'exécution, le débogage et souvent l'intégration de Git et des tests. Un IDE assiste le développement sans remplacer la compréhension du langage ni des outils employés."
+  },
+  {
+    "term": "UML",
+    "definition": "Unified Modeling Language. Langage graphique normalisé servant à représenter différents points de vue d'un système logiciel, notamment avec les diagrammes de cas d'utilisation, de classes, de séquence, d'activité et de déploiement."
+  },
+  {
+    "term": "MERISE",
+    "definition": "Méthode d'analyse et de conception des systèmes d'information séparant les données, les traitements et les niveaux conceptuel, logique et physique. Pour les données, elle conduit notamment du MCD au MLD puis au MPD."
+  },
+  {
+    "term": "HTTP",
+    "definition": "Protocole d'échange requête-réponse utilisé sur le Web. Un client envoie une requête contenant notamment une méthode, une cible, des en-têtes et parfois un corps ; le serveur renvoie une réponse avec un statut, des en-têtes et éventuellement un corps."
   },
   {
     "term": "HTTPS",
-    "definition": "HyperText Transfer Protocol Secure (HTTP sur TLS). Chiffre les échanges, garantit l’intégrité et l’authenticité du serveur via certificats X.509. Bonnes pratiques : TLS 1.2+ (ou 1.3), HSTS, redirection 301 vers https, PFS, OCSP stapling, renouvellement automatique des certificats (Let’s Encrypt), configuration sûre des suites cryptographiques."
-  },
-  {
-    "term": "Man in the middle",
-    "definition": "Attaque d’interception/altération du trafic entre client et serveur (MITM). L’attaquant se place ‘au milieu’ pour lire/modifier les données. Prévention : HTTPS/TLS correctement configuré, non‑acceptation des certificats non valides, pinning, DNSSEC/DoH, mTLS/VPN sur réseaux non fiables, protection contre le downgrade et contre les proxys malveillants."
-  },
-  {
-    "term": "Couche métier",
-    "definition": "Partie de l’application contenant les règles de gestion spécifiques au domaine fonctionnel. Elle traduit les besoins métier en logique applicative."
-  },
-
-  {
-    "term": "API RESTful",
-    "definition": "API respectant les principes REST : ressources identifiées par URL, utilisation des méthodes HTTP et absence d’état côté serveur. Elle est conçue pour être simple, standardisée et scalable."
-  },
-  {
-    "term": "SGBD",
-    "definition": "Logiciel permettant de créer, manipuler et administrer des bases de données. Il garantit la cohérence, la sécurité et l’intégrité des données."
-  },
-  {
-    "term": "Transaction",
-    "definition": "Ensemble d’opérations exécutées de manière atomique : soit toutes réussissent, soit aucune n’est appliquée. Cela garantit la cohérence des données même en cas d’erreur."
-  },
-  {
-    "term": "Clé primaire",
-    "definition": "Attribut unique identifiant chaque enregistrement d’une table. Elle ne peut pas contenir de valeur nulle."
-  },
-  {
-    "term": "Clé étrangère",
-    "definition": "Attribut reliant une table à une autre en référencant une clé primaire. Elle garantit la cohérence des relations entre tables."
-  },
-  {
-    "term": "Normalisation",
-    "definition": "Processus d’organisation des données visant à éliminer les redondances et anomalies. Elle améliore la cohérence et la maintenabilité des bases."
-  },
-  {
-    "term": "ORM",
-    "definition": "Technique permettant de manipuler une base relationnelle via des objets. Elle simplifie le développement en évitant d’écrire directement du SQL."
-  },
-  {
-    "term": "NoSQL",
-    "definition": "Type de base de données non relationnelle adaptée aux données volumineuses ou peu structurées. Elle privilégie la performance et la flexibilité."
-  },
-  {
-    "term": "Requête préparée",
-    "definition": "Requête SQL paramétrée compilée à l’avance. Elle protège contre les injections SQL et améliore les performances."
-  },
-  {
-    "term": "Jointure (JOIN)",
-    "definition": "Opération SQL permettant de combiner des données provenant de plusieurs tables. Elle est essentielle pour exploiter des modèles relationnels."
-  },
-  {
-    "term": "Cardinalité",
-    "definition": "Relation quantitative entre deux entités (1-1, 1-N, N-N). Elle décrit le nombre d’occurrences possibles entre deux tables."
-  },
-  {
-    "term": "Endpoint",
-    "definition": "URL exposée par une API permettant d’accéder à une ressource ou d’exécuter une action. Chaque endpoint correspond à une fonctionnalité précise."
+    "definition": "Utilisation de HTTP au-dessus de TLS. HTTPS chiffre les échanges, protège leur intégrité et permet au client d'authentifier le serveur au moyen de son certificat ; il ne dispense pas de valider les données ni de contrôler les autorisations applicatives."
   },
   {
     "term": "Requête HTTP",
-    "definition": "Message envoyé par un client vers un serveur pour demander une ressource. Elle contient une méthode, des headers et éventuellement un corps."
+    "definition": "Message envoyé par un client à un serveur. Il comprend une méthode HTTP, une URI, des en-têtes et éventuellement un corps ; toutes les données qu'il transporte doivent être considérées comme non fiables tant qu'elles n'ont pas été contrôlées."
   },
   {
     "term": "Réponse HTTP",
-    "definition": "Message retourné par le serveur contenant le résultat de la requête. Elle inclut un code de statut, des headers et éventuellement des données."
+    "definition": "Message renvoyé par un serveur à un client. Il contient un code de statut, des en-têtes et éventuellement un corps représentant une page HTML, des données JSON, un fichier ou un message d'erreur."
   },
   {
     "term": "Méthodes HTTP",
-    "definition": "Verbes définissant l’action sur une ressource : GET (lecture), POST (création), PUT (mise à jour), DELETE (suppression). Elles structurent les API REST."
+    "definition": "Verbes indiquant la sémantique d'une requête : GET consulte, POST soumet ou crée, PUT remplace une ressource, PATCH la modifie partiellement et DELETE demande sa suppression. Une requête GET ne doit pas provoquer de modification métier."
   },
   {
-    "term": "Code HTTP",
-    "definition": "Code numérique indiquant le résultat d’une requête (ex : 200 succès, 404 non trouvé, 500 erreur serveur). Il permet au client d’interpréter la réponse."
+    "term": "Code de statut HTTP",
+    "definition": "Nombre à trois chiffres résumant le résultat d'une requête. Exemples : 200 succès, 201 création, 204 succès sans corps, 303 redirection, 400 requête invalide, 401 non authentifié, 403 interdit, 404 absent, 409 conflit, 422 données non conformes et 500 erreur interne."
   },
   {
-    "term": "Header HTTP",
-    "definition": "Informations supplémentaires envoyées avec une requête ou une réponse. Ils décrivent le contexte (type de contenu, authentification, etc.)."
+    "term": "En-tête HTTP",
+    "definition": "Métadonnée associée à une requête ou une réponse HTTP. Un en-tête précise par exemple le type du corps, la destination d'une redirection, les règles de cache, l'authentification ou les propriétés d'un cookie."
   },
   {
-    "term": "UTF-8",
-    "definition": "Format de représentation des caractères permettant de gérer la majorité des langues. Il garantit la compatibilité internationale."
+    "term": "Content-Type",
+    "definition": "En-tête HTTP indiquant le type de média du corps transmis, par exemple text/html ou application/json. Il permet au destinataire d'interpréter correctement les octets reçus."
   },
   {
-    "term": "Session",
-    "definition": "Mécanisme de stockage temporaire des données utilisateur côté serveur. Il permet de maintenir l’état entre plusieurs requêtes."
+    "term": "Location",
+    "definition": "En-tête HTTP donnant l'URI d'une autre ressource. Il accompagne notamment une redirection 3xx ou une réponse 201 Created afin d'indiquer l'adresse de la ressource créée."
+  },
+  {
+    "term": "Route",
+    "definition": "Association entre une méthode HTTP, un motif d'URI et le traitement à exécuter. Dans Slim, GET /films/{id} et DELETE /films/{id} sont deux routes différentes malgré un chemin similaire."
+  },
+  {
+    "term": "Middleware",
+    "definition": "Composant placé dans la chaîne de traitement HTTP, avant ou après le gestionnaire final. Il peut analyser le corps, authentifier l'utilisateur, journaliser la requête ou enrichir la réponse sans dupliquer ce code dans chaque route."
+  },
+  {
+    "term": "PSR-7",
+    "definition": "Standard PHP-FIG définissant des interfaces communes pour représenter les requêtes et réponses HTTP. Ces objets sont immuables : une méthode comme withStatus ou withHeader renvoie une nouvelle instance qu'il faut conserver."
+  },
+  {
+    "term": "Query string",
+    "definition": "Partie facultative d'une URI située après le caractère ?, composée de paramètres clé-valeur. Elle sert couramment aux filtres, au tri ou à la pagination, par exemple /films?q=alien&page=2."
+  },
+  {
+    "term": "Superglobale PHP",
+    "definition": "Tableau prédéfini accessible dans toutes les portées d'un script PHP. $_GET, $_POST, $_SERVER, $_COOKIE, $_SESSION et $_FILES exposent des données liées à l'environnement ou à la requête ; leur contenu ne doit jamais être considéré comme fiable par défaut."
+  },
+  {
+    "term": "Session PHP",
+    "definition": "Mécanisme conservant des données côté serveur entre plusieurs requêtes d'un même utilisateur. Le navigateur transporte généralement seulement un identifiant de session dans un cookie ; session_start() permet de retrouver les données associées."
   },
   {
     "term": "Cookie",
-    "definition": "Donnée stockée côté client envoyée automatiquement au serveur. Il est utilisé pour maintenir une session ou stocker des préférences."
+    "definition": "Petite donnée enregistrée par le navigateur et renvoyée automatiquement au serveur selon son domaine, son chemin et ses attributs. Un cookie peut contenir un identifiant de session ou une préférence, mais ne doit pas être tenu pour secret ni digne de confiance."
   },
   {
-    "term": "Hashage",
-    "definition": "Transformation irréversible d’une donnée en empreinte. Utilisé principalement pour stocker des mots de passe de manière sécurisée."
-  },
-
-  {
-    "term": "Framework",
-    "definition": "Structure logicielle imposant une organisation et fournissant des outils. Il accélère le développement et standardise les pratiques."
+    "term": "Post/Redirect/Get",
+    "definition": "Motif de navigation dans lequel un POST réussi répond par une redirection vers une page consultée en GET. Il évite qu'un rafraîchissement du navigateur renvoie le formulaire et répète l'opération."
   },
   {
-    "term": "Bibliothèque",
-    "definition": "Ensemble de fonctions réutilisables. Contrairement à un framework, elle est appelée librement par le développeur."
+    "term": "Message flash",
+    "definition": "Message temporaire conservé le temps d'une redirection, le plus souvent en session. Il est lu puis supprimé lors de la requête suivante afin de confirmer une action ou signaler une erreur une seule fois."
   },
-
   {
-    "term": "Versioning",
-    "definition": "Gestion des versions du code source dans le temps. Il permet de suivre les modifications et collaborer."
+    "term": "Normalisation des entrées",
+    "definition": "Transformation d'une donnée externe vers une forme cohérente avant sa validation, par exemple supprimer les espaces inutiles ou uniformiser la casse. Normaliser ne signifie pas décider que la valeur est acceptable."
+  },
+  {
+    "term": "Validation",
+    "definition": "Vérification qu'une donnée respecte le type, le format, les bornes et les règles métier attendus. La validation décisive doit être réalisée côté serveur, car les contrôles HTML ou JavaScript peuvent être contournés."
+  },
+  {
+    "term": "Échappement HTML",
+    "definition": "Encodage des caractères ayant un sens en HTML afin qu'une donnée soit affichée comme du texte et non interprétée comme du balisage. En PHP, htmlspecialchars doit être appliqué au moment de produire la sortie HTML."
+  },
+  {
+    "term": "Injection SQL",
+    "definition": "Vulnérabilité dans laquelle une donnée contrôlée par l'utilisateur modifie la structure d'une requête SQL. La défense principale consiste à séparer la requête de ses valeurs avec des requêtes préparées, sans concaténer les entrées dans le SQL."
+  },
+  {
+    "term": "XSS",
+    "definition": "Cross-Site Scripting. Vulnérabilité permettant à une donnée malveillante de devenir du code actif dans la page d'un autre utilisateur. La défense centrale est l'échappement adapté au contexte de sortie, complété si nécessaire par une politique CSP et une sanitisation maîtrisée."
+  },
+  {
+    "term": "CSRF",
+    "definition": "Cross-Site Request Forgery. Attaque amenant le navigateur d'un utilisateur authentifié à envoyer une requête non désirée. Les actions sensibles sont protégées notamment par un jeton imprévisible lié à la session, vérifié côté serveur, et par des cookies correctement configurés."
+  },
+  {
+    "term": "Authentification",
+    "definition": "Processus consistant à vérifier l'identité déclarée d'un utilisateur, par exemple au moyen d'un identifiant et d'un mot de passe. Elle répond à la question : « qui êtes-vous ? »"
+  },
+  {
+    "term": "Autorisation",
+    "definition": "Décision déterminant si un utilisateur authentifié possède le droit d'effectuer une action sur une ressource donnée. Elle répond à la question : « avez-vous le droit de faire cela ? » et doit être contrôlée côté serveur pour chaque action sensible."
+  },
+  {
+    "term": "Hashage de mot de passe",
+    "definition": "Transformation non réversible d'un mot de passe en une empreinte conçue pour être coûteuse à calculer. En PHP, password_hash crée l'empreinte et password_verify vérifie une saisie ; un mot de passe ne doit être ni stocké en clair ni chiffré de manière réversible."
+  },
+  {
+    "term": "RGPD",
+    "definition": "Règlement général sur la protection des données. Il encadre le traitement des données personnelles dans l'Union européenne et impose notamment finalité, base légale, minimisation, durée de conservation, sécurité et respect des droits des personnes."
+  },
+  {
+    "term": "SQL",
+    "definition": "Langage utilisé pour définir, interroger et modifier les données d'une base relationnelle. Il comprend notamment SELECT, INSERT, UPDATE, DELETE, les jointures, les contraintes et les instructions de transaction."
+  },
+  {
+    "term": "SGBD relationnel",
+    "definition": "Système de gestion de base de données organisant les données en tables reliées par des clés. Il exécute les requêtes SQL et contribue à garantir l'intégrité, la concurrence des accès, les transactions et les droits."
+  },
+  {
+    "term": "Normalisation relationnelle",
+    "definition": "Démarche de structuration d'un schéma relationnel visant à limiter les redondances et les anomalies d'insertion, de modification ou de suppression. Elle s'appuie sur les dépendances entre attributs et les formes normales, sans interdire toute dénormalisation justifiée."
+  },
+  {
+    "term": "PDO",
+    "definition": "PHP Data Objects. Interface standard de PHP donnant accès à plusieurs SGBD au moyen de pilotes. PDO fournit connexions, requêtes préparées, transactions et différents modes de lecture, mais n'empêche pas une injection si le SQL reste construit par concaténation."
+  },
+  {
+    "term": "Requête préparée",
+    "definition": "Requête SQL dont la structure contient des paramètres séparés des valeurs fournies ensuite. Avec prepare puis execute, elle protège les valeurs contre l'injection SQL ; les noms de table, de colonne ou les mots-clés dynamiques doivent encore être contrôlés par liste blanche."
+  },
+  {
+    "term": "Transaction",
+    "definition": "Unité logique regroupant plusieurs opérations sur la base de données. COMMIT valide l'ensemble et ROLLBACK l'annule en cas d'échec, afin d'éviter qu'une opération métier reste partiellement appliquée."
+  },
+  {
+    "term": "Clé primaire",
+    "definition": "Contrainte identifiant de manière unique chaque ligne d'une table. Une clé primaire est unique et non nulle ; elle peut être composée d'une ou de plusieurs colonnes."
+  },
+  {
+    "term": "Clé étrangère",
+    "definition": "Contrainte reliant une ou plusieurs colonnes d'une table à une clé candidate, le plus souvent primaire, d'une autre table. Elle garantit l'intégrité référentielle entre les lignes liées."
+  },
+  {
+    "term": "Jointure SQL",
+    "definition": "Opération combinant les lignes de plusieurs tables selon une condition de correspondance. INNER JOIN ne conserve que les correspondances, tandis qu'une jointure externe comme LEFT JOIN peut aussi conserver les lignes sans correspondance du côté choisi."
+  },
+  {
+    "term": "Cardinalité",
+    "definition": "Indication du nombre minimal et maximal d'occurrences pouvant participer à une association dans un modèle de données. Les cardinalités expriment une règle du domaine et guident la transformation du MCD vers le schéma relationnel."
+  },
+  {
+    "term": "MCD",
+    "definition": "Modèle conceptuel de données. Représentation indépendante de toute technologie décrivant les entités, leurs propriétés, les associations et les cardinalités du domaine étudié."
+  },
+  {
+    "term": "MLD",
+    "definition": "Modèle logique de données. Traduction du MCD dans un modèle de données, généralement relationnel, faisant apparaître relations, attributs, clés primaires et clés étrangères sans fixer tous les détails d'un SGBD précis."
+  },
+  {
+    "term": "MPD",
+    "definition": "Modèle physique de données. Implémentation du modèle logique dans un SGBD déterminé avec les tables, types, contraintes, index et choix techniques nécessaires au déploiement."
+  },
+  {
+    "term": "MVC",
+    "definition": "Modèle-Vue-Contrôleur. Organisation séparant le modèle, qui porte l'état et les règles du domaine, la vue, qui construit la représentation, et le contrôleur, qui traduit une requête en appels applicatifs puis choisit la réponse. MVC n'impose pas à lui seul la manière d'accéder à la base."
+  },
+  {
+    "term": "Modèle MVC",
+    "definition": "Partie de l'architecture représentant le domaine, son état et ses règles. Le modèle ne se réduit pas à la base de données et ne doit pas dépendre de la présentation HTML ou JSON."
+  },
+  {
+    "term": "Vue MVC",
+    "definition": "Composant chargé de produire une représentation à partir des données qui lui sont fournies, par exemple du HTML ou du JSON. Une vue ne décide pas des règles métier et ne lance pas de requêtes vers la base."
+  },
+  {
+    "term": "Contrôleur MVC",
+    "definition": "Composant recevant la requête, extrayant les entrées utiles, appelant les services ou repositories appropriés, puis choisissant la réponse. Un contrôleur reste mince : il ne contient ni SQL, ni longue génération HTML, ni règle métier complexe."
+  },
+  {
+    "term": "Repository",
+    "definition": "Composant qui centralise l'accès à la persistance pour un type d'objet du domaine. Il masque les détails de PDO, Medoo, des tables et des requêtes ; il ne doit connaître ni le HTML, ni les codes de statut HTTP."
+  },
+  {
+    "term": "Service métier",
+    "definition": "Composant orchestrant un cas d'utilisation ou une règle métier qui ne relève pas naturellement d'une seule entité. Il travaille avec le domaine et les repositories sans dépendre de la représentation HTML ou JSON."
+  },
+  {
+    "term": "Front controller",
+    "definition": "Point d'entrée HTTP unique d'une application web, souvent public/index.php. Il charge la configuration et l'autoloading, construit l'application et ses dépendances, puis transmet la requête au routeur."
+  },
+  {
+    "term": "Injection de dépendances",
+    "definition": "Technique consistant à fournir à un objet ses collaborateurs depuis l'extérieur, généralement par son constructeur, plutôt qu'à les créer en son sein. Les dépendances deviennent visibles, remplaçables et plus faciles à tester."
+  },
+  {
+    "term": "API",
+    "definition": "Application Programming Interface. Contrat par lequel un logiciel expose des données ou des fonctionnalités à d'autres logiciels. Une API précise les opérations disponibles, les entrées attendues, les sorties et les erreurs possibles."
+  },
+  {
+    "term": "API REST",
+    "definition": "API HTTP organisée autour de ressources identifiées par des URI et manipulées au moyen de la sémantique standard de HTTP. Elle échange des représentations, utilise des statuts explicites et conserve les informations nécessaires au traitement dans chaque requête plutôt que dans un état conversationnel implicite."
+  },
+  {
+    "term": "Ressource REST",
+    "definition": "Élément du domaine identifié par une URI, par exemple /api/films/42. Une ressource est un concept abstrait ; le JSON ou le HTML reçu par le client n'en est qu'une représentation."
+  },
+  {
+    "term": "Endpoint",
+    "definition": "Point d'accès concret d'une API, défini par la combinaison d'une méthode HTTP et d'une URI. GET /api/films et POST /api/films partagent le même chemin mais correspondent à deux endpoints distincts."
+  },
+  {
+    "term": "JSON",
+    "definition": "JavaScript Object Notation. Format texte d'échange représentant objets, tableaux, chaînes, nombres, booléens et null. JSON ne définit ni les règles métier, ni les codes de statut HTTP, et ne comporte pas de commentaires dans sa syntaxe standard."
+  },
+  {
+    "term": "CRUD",
+    "definition": "Create, Read, Update, Delete. Ensemble des quatre opérations fondamentales de persistance : créer, lire, modifier et supprimer. Dans une API REST, elles sont souvent associées à POST, GET, PUT ou PATCH et DELETE, sans que CRUD et HTTP soient strictement équivalents."
+  },
+  {
+    "term": "Idempotence",
+    "definition": "Propriété d'une opération dont la répétition produit le même effet attendu sur l'état du serveur qu'une seule exécution. GET, PUT et DELETE sont conçues comme idempotentes ; leurs réponses successives peuvent néanmoins différer."
+  },
+  {
+    "term": "OpenAPI",
+    "definition": "Spécification permettant de décrire de manière structurée et lisible par machine une API HTTP : routes, paramètres, corps, schémas, réponses et mécanismes de sécurité. Un document OpenAPI constitue un contrat, pas l'implémentation de l'API."
+  },
+  {
+    "term": "Test unitaire",
+    "definition": "Test automatisé vérifiant isolément une petite unité de code, généralement une fonction ou une méthode. Il doit être rapide, déterministe et centré sur un comportement attendu, avec des dépendances remplacées si nécessaire."
+  },
+  {
+    "term": "Test d'intégration",
+    "definition": "Test vérifiant que plusieurs composants collaborent correctement, par exemple un repository avec une base de données ou une route avec ses middlewares. Il couvre les frontières que le test unitaire isole."
+  },
+  {
+    "term": "Recette applicative",
+    "definition": "Ensemble organisé de scénarios permettant de vérifier qu'une solution répond aux besoins et aux critères d'acceptation. Une recette décrit les préconditions, les actions, les résultats attendus et conserve les preuves des tests réalisés."
   }
 ]

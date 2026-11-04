@@ -28,7 +28,7 @@
     "definition": "Objet signalant qu'un traitement ne peut pas suivre son déroulement normal. Une exception est levée avec throw et peut être interceptée avec try/catch ; elle peut représenter une défaillance technique ou une violation exceptionnelle d'une règle du domaine."
   },
   {
-    "term": "Namespace PHP",
+    "term": "Espace de noms (namespace)",
     "definition": "Espace de noms permettant d'organiser les classes et d'éviter les collisions entre noms identiques. L'instruction namespace déclare l'espace d'une classe et use permet de l'importer sous un nom utilisable dans le fichier."
   },
   {
@@ -44,7 +44,7 @@
     "definition": "Gestionnaire de dépendances de l'écosystème PHP. Il installe les paquets décrits dans composer.json, consigne les versions résolues dans composer.lock et génère notamment le fichier vendor/autoload.php."
   },
   {
-    "term": "Autoloading PSR-4",
+    "term": "Autoloading (chargement automatique) PSR-4",
     "definition": "Convention de chargement automatique qui associe un préfixe de namespace à un répertoire. Grâce à la configuration PSR-4 de Composer, une classe peut être chargée à la demande sans multiplier les require manuels."
   },
   {
@@ -120,7 +120,7 @@
     "definition": "Standard PHP-FIG définissant des interfaces communes pour représenter les requêtes et réponses HTTP. Ces objets sont immuables : une méthode comme withStatus ou withHeader renvoie une nouvelle instance qu'il faut conserver."
   },
   {
-    "term": "Query string",
+    "term": "Chaîne de requête (query string)",
     "definition": "Partie facultative d'une URI située après le caractère ?, composée de paramètres clé-valeur. Elle sert couramment aux filtres, au tri ou à la pagination, par exemple /films?q=alien&page=2."
   },
   {
@@ -176,7 +176,7 @@
     "definition": "Décision déterminant si un utilisateur authentifié possède le droit d'effectuer une action sur une ressource donnée. Elle répond à la question : « avez-vous le droit de faire cela ? » et doit être contrôlée côté serveur pour chaque action sensible."
   },
   {
-    "term": "Hashage de mot de passe",
+    "term": "Hachage de mot de passe",
     "definition": "Transformation non réversible d'un mot de passe en une empreinte conçue pour être coûteuse à calculer. En PHP, password_hash crée l'empreinte et password_verify vérifie une saisie ; un mot de passe ne doit être ni stocké en clair ni chiffré de manière réversible."
   },
   {
@@ -190,10 +190,6 @@
   {
     "term": "SGBD relationnel",
     "definition": "Système de gestion de base de données organisant les données en tables reliées par des clés. Il exécute les requêtes SQL et contribue à garantir l'intégrité, la concurrence des accès, les transactions et les droits."
-  },
-  {
-    "term": "Normalisation relationnelle",
-    "definition": "Démarche de structuration d'un schéma relationnel visant à limiter les redondances et les anomalies d'insertion, de modification ou de suppression. Elle s'appuie sur les dépendances entre attributs et les formes normales, sans interdire toute dénormalisation justifiée."
   },
   {
     "term": "PDO",
@@ -240,6 +236,18 @@
     "definition": "Modèle-Vue-Contrôleur. Organisation séparant le modèle, qui porte l'état et les règles du domaine, la vue, qui construit la représentation, et le contrôleur, qui traduit une requête en appels applicatifs puis choisit la réponse. MVC n'impose pas à lui seul la manière d'accéder à la base."
   },
   {
+    "term": "Monolithe",
+    "definition": "Dans les ateliers, fichier ou application où plusieurs responsabilités sont concentrées au même endroit : accès aux données, validation, décisions HTTP et production du HTML. Un monolithe n'est pas forcément inutilisable, mais cette concentration rend les modifications et les tests plus difficiles."
+  },
+  {
+    "term": "Refactorisation",
+    "definition": "Modification de la structure interne d'un programme sans changer son comportement observable. Dans l'atelier MVC, elle consiste à extraire progressivement le modèle, le repository, les règles de validation, les vues et le contrôleur tout en rejouant la recette après chaque étape."
+  },
+  {
+    "term": "Règle métier",
+    "definition": "Contrainte propre au domaine de l'application, par exemple interdire l'emprunt d'un document déjà prêté. Elle doit être vérifiée côté serveur et rester indépendante de la manière dont l'utilisateur agit, par une page HTML ou par une API JSON."
+  },
+  {
     "term": "Modèle MVC",
     "definition": "Partie de l'architecture représentant le domaine, son état et ses règles. Le modèle ne se réduit pas à la base de données et ne doit pas dépendre de la présentation HTML ou JSON."
   },
@@ -256,24 +264,16 @@
     "definition": "Composant qui centralise l'accès à la persistance pour un type d'objet du domaine. Il masque les détails de PDO, Medoo, des tables et des requêtes ; il ne doit connaître ni le HTML, ni les codes de statut HTTP."
   },
   {
-    "term": "Service métier",
-    "definition": "Composant orchestrant un cas d'utilisation ou une règle métier qui ne relève pas naturellement d'une seule entité. Il travaille avec le domaine et les repositories sans dépendre de la représentation HTML ou JSON."
-  },
-  {
-    "term": "Front controller",
-    "definition": "Point d'entrée HTTP unique d'une application web, souvent public/index.php. Il charge la configuration et l'autoloading, construit l'application et ses dépendances, puis transmet la requête au routeur."
-  },
-  {
-    "term": "Injection de dépendances",
-    "definition": "Technique consistant à fournir à un objet ses collaborateurs depuis l'extérieur, généralement par son constructeur, plutôt qu'à les créer en son sein. Les dépendances deviennent visibles, remplaçables et plus faciles à tester."
-  },
-  {
     "term": "API",
     "definition": "Application Programming Interface. Contrat par lequel un logiciel expose des données ou des fonctionnalités à d'autres logiciels. Une API précise les opérations disponibles, les entrées attendues, les sorties et les erreurs possibles."
   },
   {
     "term": "API REST",
     "definition": "API HTTP organisée autour de ressources identifiées par des URI et manipulées au moyen de la sémantique standard de HTTP. Elle échange des représentations, utilise des statuts explicites et conserve les informations nécessaires au traitement dans chaque requête plutôt que dans un état conversationnel implicite."
+  },
+  {
+    "term": "Contrat d'API",
+    "definition": "Description précise de ce qu'une API accepte et renvoie : méthodes, URI, paramètres, corps, formats, codes de statut, en-têtes et erreurs. Le contrat permet à un autre programme ou à un groupe testeur d'utiliser l'API sans connaître son code interne."
   },
   {
     "term": "Ressource REST",
@@ -296,10 +296,6 @@
     "definition": "Propriété d'une opération dont la répétition produit le même effet attendu sur l'état du serveur qu'une seule exécution. GET, PUT et DELETE sont conçues comme idempotentes ; leurs réponses successives peuvent néanmoins différer."
   },
   {
-    "term": "OpenAPI",
-    "definition": "Spécification permettant de décrire de manière structurée et lisible par machine une API HTTP : routes, paramètres, corps, schémas, réponses et mécanismes de sécurité. Un document OpenAPI constitue un contrat, pas l'implémentation de l'API."
-  },
-  {
     "term": "Test unitaire",
     "definition": "Test automatisé vérifiant isolément une petite unité de code, généralement une fonction ou une méthode. Il doit être rapide, déterministe et centré sur un comportement attendu, avec des dépendances remplacées si nécessaire."
   },
@@ -308,7 +304,7 @@
     "definition": "Test vérifiant que plusieurs composants collaborent correctement, par exemple un repository avec une base de données ou une route avec ses middlewares. Il couvre les frontières que le test unitaire isole."
   },
   {
-    "term": "Recette applicative",
+    "term": "Recette fonctionnelle",
     "definition": "Ensemble organisé de scénarios permettant de vérifier qu'une solution répond aux besoins et aux critères d'acceptation. Une recette décrit les préconditions, les actions, les résultats attendus et conserve les preuves des tests réalisés."
   }
 ]
